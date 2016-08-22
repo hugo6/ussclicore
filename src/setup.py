@@ -26,7 +26,8 @@ class CleanCommand(Command):
     def finalize_options(self):
         pass
     def run(self):
-        os.system('rm -vrf ./build ./dist ./*.pyc ./*.egg-info | find -iname "*.pyc" -exec rm {} +')
+        os.system('rm -vrf ./build ./dist ./*.pyc ./*.egg-info')
+        os.system('find -iname "*.pyc" -exec rm {} +')
                     
 setup (
   install_requires=requires,
